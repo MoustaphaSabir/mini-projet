@@ -1,5 +1,5 @@
 
-# Mini-projet Centre de formation
+# Mini-projet Centre de formation 
  
 Site internet de présentation du Centre de formation : INFO-tech
  
@@ -7,10 +7,19 @@ Site internet de présentation du Centre de formation : INFO-tech
  
 ### Front-office
 
-- Accueil : Liste de mes réalisations en page d'accueil
+- Accueil : Liste des formations :
+Word
+Excel
+Powerpoint 
+Accès
 
 - Page de détail : Présentation d'une réalisation
- 
+ Excel : a saisie de données, des calculs de gestions .La navigation dans Excel,Le formatage des cellule,Les graphiques,
+Les tableaux croisés dynamiques ,La gestion des feuilles de calcul et des classeurs .
+ word : creations des documents , Saisie de texte :Formatage de texte,Gestion des pages,
+Révision et correction,Impression et partage ,Automatisation
+Powerpoint : Création de diapositives,Utilisation des animations et des transitions,Insertion de médias,Ajout de commentaires et de notes,Préparation et présentation,Partage et exportation,Partage et exportation
+
 ### Back-office
 
 - Page de création de réalisation (si possible)
@@ -25,9 +34,10 @@ Une réalisation sera composée de :
 
 - Description  : zone de texte
 
-- Année * : un nombre
-
-- Image * : une URL
+- Date_debut * : date
+  Date_fin : date
+  Date_inscription  : date 
+  BDD  
 
 * Champs obligatoires
  
