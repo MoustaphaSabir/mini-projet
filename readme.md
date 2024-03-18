@@ -16,8 +16,9 @@ Accès
 - Page de détail : Présentation d'une réalisation
  Excel : a saisie de données, des calculs de gestions .La navigation dans Excel,Le formatage des cellule,Les graphiques,
 Les tableaux croisés dynamiques ,La gestion des feuilles de calcul et des classeurs .
- word : creations des documents , Saisie de texte :Formatage de texte,Gestion des pages,
-Révision et correction,Impression et partage ,Automatisation
+
+ word : creations des documents , Saisie de texte :Formatage de texte,Gestion des pages ,Révision et correction,Impression et partage ,Automatisation
+
 Powerpoint : Création de diapositives,Utilisation des animations et des transitions,Insertion de médias,Ajout de commentaires et de notes,Préparation et présentation,Partage et exportation,Partage et exportation
 
 ### Back-office
@@ -29,14 +30,25 @@ Powerpoint : Création de diapositives,Utilisation des animations et des transit
 ## Structure des données
  
 Une réalisation sera composée de :
-
+ creation table utilisateurs
 - Nom* : champs de texte de 80 caractères
+prenom* : champs de texte de 80 caractères
+ Email VARCHAR(100) UNIQUE,
+     Mot_de_passe VARCHAR(255)
+
+Creation TABLE Cours (
+    ID_cours INT A
+    Nom_du_cours VARCHAR(100),
+    Description TEXT,
+    Duree INT,
+    Niveau VARCHAR(50));
 
 - Description  : zone de texte
-
-- Date_debut * : date
-  Date_fin : date
-  Date_inscription  : date 
+creation TABLE Inscriptions 
+    ID_inscription INT AUTO_INCREMENT PRIMARY KEY,
+    ID_utilisateur INT,
+    ID_cours INT,
+    Date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   BDD  
 
 * Champs obligatoires
