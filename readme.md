@@ -1,5 +1,5 @@
 
-# Mini-projet PORTFOLIO
+# Mini-projet Centre de formation
  
 Site internet de présentation du Centre de formation : INFO-tech
  
