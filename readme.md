@@ -23,9 +23,7 @@ Powerpoint : Création de diapositives,Utilisation des animations et des transit
 
 ### Back-office
 
-- Page de création de réalisation (si possible)
-
-- Thématiser les réalisations par types (si possible)
+- La  Creation d'un formulaire de contact :
  
 ## Structure des données
  
