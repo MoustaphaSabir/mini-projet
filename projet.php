@@ -10,31 +10,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <!-- Relier le devis avec la base des donnees et le php -->
-   <!-- Relier le formulaire d'inscription avec la BDD  -->
-   <!-- Styliser les balises Html et mettre à jour la BDD mysql -->
-   <!-- Faire afficher le formulaire de devis sur une autre page sans ce recharge -->
-   
-        <h1>CENTRE DE FORMATION INFO-TECH</h1>
+    <h1>CENTRE DE FORMATION INFO-TECH</h1>
     <header>
         <div class="navigation">
-          <nav> <a href="projet.php">Accueil</a></nav>
-          <nav> <a href="Inscription.html">inscription</a></nav>
-          <nav> <a href="devis.php">Devis</a></nav>
+            <nav> <a href="projet.php">Accueil</a></nav>
+            <nav> <a href="Inscription.html">inscription</a></nav>
+            <nav> <a href="devis.php">Devis</a></nav>
         </div>
     </header>
-      <h1>Programme du centre de formation INFO-TECH</h1>
-    <!-- <p> -->
+        <h2>Programme du centre de formation INFO-TECH</h2>
     <div class="contenairImage">
-        <img src="../projet1/docs/excel.png" alt="">
-        <img src="../projet1/docs/WORD (1).png" alt="">
-        <img src="../projet1/docs/Acces.png" alt="">
-        <img src="../projet1/docs/powerpoint.png" alt="">
+        <img src="../projet1/images/excel.png" alt="Excel">
+        <img src="../projet1/images/WORD (1).png" alt="Word">
+        <img src="../projet1/images/Acces4.png" alt="Acces">
+        <img src="../projet1/images/powerpoint.png" alt="Powerpoint">
     </div>
        <p>
-            Le Centre de Formation offre un programme complet spécialisé dans l'enseignement de Word, Excel, Access et PowerPoint, les piliers fondamentaux de la productivité bureautique. Notre équipe d'instructeurs qualifiés propose des cours interactifs et personnalisés, adaptés à tous les niveaux, afin de permettre aux apprenants de maîtriser efficacement ces outils essentiels. Grâce à des méthodes d'apprentissage innovantes et des exercices pratiques, nos participants acquièrent des compétences concrètes et sont prêts à relever les défis du monde professionnel. Rejoignez-nous pour développer 
-            votre expertise et votre efficacité dans le domaine de la bureautique.
+        Le Centre de Formation offre un programme complet spécialisé dans l'enseignement de Word, Excel, Access et PowerPoint, les piliers fondamentaux de la productivité bureautique. Notre équipe d'instructeurs qualifiés propose des cours interactifs et personnalisés, adaptés à tous les niveaux, afin de permettre aux apprenants de maîtriser efficacement ces outils essentiels. Grâce à des méthodes d'apprentissage innovantes et des exercices pratiques, nos participants acquièrent des compétences concrètes et sont prêts à relever les défis du monde professionnel. Rejoignez-nous pour développer 
+        votre expertise et votre efficacité dans le domaine de la bureautique.
        </p>
+    <div class="contenairvideo">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/I2WLDJLc70M?si=ZeEZeZIy6u0Mt4gF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
     <?php
         $serveur = "localhost";
         $utilisateur = "root";
@@ -54,11 +53,11 @@
         $sql = "SELECT * FROM cours";
         $cours = mysqli_query($connexion, $sql);
         // Vérifier si la requête a réussi
-         echo "<ul>";
+        echo "<ul>";
             if ($cours) {
                 // print_r($cours);
                 foreach($cours as $cour) {
-                    echo "<li>" . $cour['nom_du_cours'] .  "<br>". "</li>";
+                    echo "<li class='element'>" . $cour['nom_du_cours'] .'</>'.  "<br>". "</li>";
                 }
             } else {
                 echo "Erreur : " . mysqli_error($connexion);
@@ -69,10 +68,10 @@
         if ($cours) {
             // print_r($cours);
             foreach($cours as $cour) {
-                echo $cour['nom_du_cours'] . "<br>".  $cour['description'] . '<br>';
+                echo '<strong>' . $cour['nom_du_cours'] . "<br>".  $cour['description'] . '</strong>'. '<br>';
             }
         } else {
-            echo "Erreur : " . mysqli_error($connexion);
+        echo "Erreur : " . mysqli_error($connexion);
         }
         echo "<br>";
 
@@ -85,12 +84,12 @@
 
 if ($inscription) {
     while ($row = mysqli_fetch_assoc($inscription)) {
-        echo "Nom : " . $row['nom'] . "<br>";
-        echo "Prénom : " . $row['prenom'] . "<br>";
-        echo "Email : " . $row['email'] . "<br>";
-        echo "Nom du cours : " . $row['nom_du_cours'] . "<br>";
-        echo "Date d'inscription : " . $row ['date_inscription'] . "<br>";
-        echo "<br>";
+    echo "Nom : " . $row['nom'] . "<br>";
+    echo "Prénom : " . $row['prenom'] . "<br>";
+    echo "Email : " . $row['email'] . "<br>";
+    echo "Nom du cours : " . $row['nom_du_cours'] . "<br>";
+    echo "Date d'inscription : " . $row ['date_inscription'] . "<br>";
+    echo "<br>";
     }
 } else {
     echo "Erreur : " . mysqli_error($connexion);
@@ -107,48 +106,29 @@ if (!empty($_POST)) {
         $result = $resultat->fetch_assoc();
         $utilisateur = $result["id_utilisateurs"];
     } else {
-        // Si l'utilisateur n'existe pas, ajouter l'utilisateur dans la base de données
-        $sql = "INSERT INTO utilisateurs (`nom`, `prenom`, `email`,`mot_de_passe`)
-        VALUES ('$nom', '$prenom', '$gmail', '$mot_de_passe')";
-        mysqli_query($connexion, $sql);
+    // Si l'utilisateur n'existe pas, ajouter l'utilisateur dans la base de données
+    $sql = "INSERT INTO utilisateurs (`nom`, `prenom`, `email`,`mot_de_passe`)
+    VALUES ('$nom', '$prenom', '$gmail', '$mot_de_passe')";
+    mysqli_query($connexion, $sql);
 
-        $sql = "SELECT`id_utilisateurs`
-        FROM `utilisateurs` ORDER BY id_utilisateurs desc LIMIT 1";
-        $resultat =  mysqli_query($connexion, $sql);
-        $result = $resultat->fetch_assoc();
-        $utilisateur = $result["id_utilisateurs"];
+    $sql = "SELECT`id_utilisateurs`
+    FROM `utilisateurs` ORDER BY id_utilisateurs desc LIMIT 1";
+    $resultat =  mysqli_query($connexion, $sql);
+    $result = $resultat->fetch_assoc();
+    $utilisateur = $result["id_utilisateurs"];
 
     }
     $objet = mysqli_real_escape_string($connexion, $_POST["objet"]);
-        $sql = "INSERT INTO `inscription`(`id_inscriptions`,
-        `id_cours`, `id_utilisateurs`, `date_inscription`)
-        VALUES ('[1]','[2]','[3]','[4]')";
+    $sql = "INSERT INTO `inscription`(`id_cours`, `id_utilisateurs`, `date_inscription`)
+    VALUES ('$objet','$utilisateur',NOW())";
+    mysqli_query($connexion, $sql);
 
-    print_r($utilisateur);
-    
-    /*$sql = "INSERT INTO utilisateurs (`nom`, `prenom`, `email`,`mot_de_passe`) 
-    VALUES ('$nom', '$prenom', '$gmail', '$mot_de_passe')";*/
-    
+    // print_r($utilisateur);
     mysqli_close($connexion);
 }
 
 ?>
-<!-- page qui traite le formulaire HTML -->
 <?php
- if (empty($_POST)) {
-    echo 'Le formulaire n\'a pas eté soumis correctement';
-    exit();
- }
-// Existe t-il un $_POST ['nom] et est-il différent de null
-if (isset($_POST['nom'])) {
-  echo 'Vider le nom';
-}
-else {
-    echo 'Erreur sur le nom.';
-    exit();
-}
-// $_POST ['nom] est -il inferieur à 80 caractéres
-// Utiliser isset et empty
 ?>
 <h1>Nous avons bien reçu votre message !</h1>
 Nom : <?php echo ($_POST['nom']) . '<br />' ; ?>
