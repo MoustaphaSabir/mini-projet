@@ -14,7 +14,7 @@
     <header>
         <div class="navigation">
             <nav> <a href="projet.php">Accueil</a></nav>
-            <nav> <a href="Inscription.html">inscription</a></nav>
+            <nav> <a href="Inscription.html">Inscription</a></nav>
             <nav> <a href="devis.php">Devis</a></nav>
         </div>
     </header>
@@ -128,8 +128,7 @@ if (!empty($_POST)) {
 }
 
 ?>
-<?php
-?>
+
 <h1>Nous avons bien reçu votre message !</h1>
 Nom : <?php echo ($_POST['nom']) . '<br />' ; ?>
 E-mail: <?php echo $_POST['gmail'] . '<br />';?>
@@ -138,5 +137,28 @@ contact : <?php echo $_POST['objet'] . '<br />';?>
 Abonnement Newsletter:   <?php echo $_POST['contact'] . '<br />';?>
 Date de naissance :  <?php echo $_POST['date'] . '<br />';?>
 
+ <?php
+// $nom = "Moussa";
+// $prenom = "Moustapha";
+// $gmail = "moustaphasabirm@example.com";
+
+// // Définir le cookie avec le nom, prénom et adresse e-mail
+// setcookie("nom", $nom, time() + 3600, "/");
+// setcookie("prenom", $prenom, time() + 3600, "/");
+// setcookie("gmail", $gmail, time() + 3600, "/");
+
+// // Afficher le contenu du cookie "nom"
+// echo $_COOKIE["nom"];
+
+// // Vérifier si les cookies "nom" et "prenom" sont définis
+// if (isset($_COOKIE["nom"]) && isset($_COOKIE["prenom"])) {
+//     // Afficher un message de bienvenue avec le nom et le prénom
+//     echo "Bienvenue " . $_COOKIE["nom"] . " " . $_COOKIE["prenom"];
+// } else {
+//     // Afficher un message de bienvenue pour un visiteur non identifié
+//     echo "Bienvenue, Visiteur";
+// }
+
+?>
 </body>
 </html>
