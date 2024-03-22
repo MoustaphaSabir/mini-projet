@@ -46,7 +46,7 @@ creation TABLE Inscriptions
     ID_inscription INT AUTO_INCREMENT PRIMARY KEY,
     ID_utilisateur INT,
     ID_cours INT,
-    Date_inscription TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Date_inscription :  date
   BDD  
 
 * Champs obligatoires
