@@ -12,8 +12,6 @@ header{
 }
 p{
     text-align: center;
-    /* margin-left: 400px;
-    margin-right: 400px; */
     font-size: 15px;
 }
 .contenairImage{
@@ -62,11 +60,11 @@ form{
     display: flex;
     background-color: rgb(65, 42, 165);
     justify-content:space-around; 
-     padding: 30px; 
+    padding: 30px; 
 }
 .navi :hover{
     color: rgb(183, 22, 22);
-    transform: scale(1.2); 
+
 }
 .element{
     color: blue;
@@ -76,3 +74,26 @@ form{
     justify-content: center;
     
 }
+li .element{
+    display: flex;
+    justify-content: space-around;
+}
+.st{
+    display: flex;
+    justify-content: space-around;
+    background-color: #412aa5;
+    padding: 30px; 
+    margin-bottom: 30px;
+}
+.st :hover{
+    color: rgb(183, 22, 22);
+    transform: scale(1.2); 
+    }
+h2 {
+    text-align: center;
+}
+
+
+ 
+
+
