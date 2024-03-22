@@ -3,46 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Devis Formation Bureautique</title>
     <style>
-        /* Styles CSS */
         body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        h2 {
-            text-align: center;
+            font-family: "Roboto Slab", serif;
         }
         table {
+        
             width: 100%;
+
             border-collapse: collapse;
         }
         th, td {
             padding: 10px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 3px solid #ddd;
             text-align: left;
+            margin-top: 50px;
         }
         th {
             background-color: #f2f2f2;
         }
+            .container {
+            max-width: 600px;
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
     </style>
 </head>
 <body>
     <header>
-        <ul>
-            <li><a href="projet.php">Accueil</a></li>
-            <li><a href="Inscription.html">inscription</a></li>
-            <li><a href="devis.html">Devis</a></li>
-        </ul>
+        <div class="st">
+            <nav><a href="projet.php">Accueil</a></nav>
+            <nav><a href="Inscription.html">Inscription</a></nav>
+            <nav><a href="devis.php">Devis</a></nav>
+        </div>
     </header>
-     <div class="container">
-        <h2>Devis Formation Bureautique</h2>
+        <div class="container">
+            <h2>Devis Formation Bureautique</h2>
     <table>
         <tr>
             <th>Module</th>
@@ -54,7 +58,7 @@
             <td>3</td>
             <td>300</td>
         </tr>
-      <td>Microsoft Excel</td>
+        <td>Microsoft Excel</td>
         <td>3</td>
             <td>350</td>
         </tr>
