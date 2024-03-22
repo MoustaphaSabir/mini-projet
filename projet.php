@@ -81,15 +81,16 @@
         INNER JOIN cours ON inscription.id_cours = cours.id_cours";
 
     $inscription = mysqli_query($connexion, $sql);
-
+    echo "<strong class ='listes'>" . "La liste des inscrits :"  . "</strong>" ."<br>";
+    echo "<br>" ;
 if ($inscription) {
     while ($row = mysqli_fetch_assoc($inscription)) {
-    echo "Nom : " . $row['nom'] . "<br>";
-    echo "Prénom : " . $row['prenom'] . "<br>";
-    echo "Email : " . $row['email'] . "<br>";
-    echo "Nom du cours : " . $row['nom_du_cours'] . "<br>";
-    echo "Date d'inscription : " . $row ['date_inscription'] . "<br>";
-    echo "<br>";
+        echo "Nom : " . $row['nom'] . "<br>";
+        echo "Prénom : " . $row['prenom'] . "<br>";
+        echo "Email : " . $row['email'] . "<br>";
+        echo "Nom du cours : " . $row['nom_du_cours'] . "<br>";
+        echo "Date d'inscription : " . $row ['date_inscription'] . "<br>";
+        echo "<br>";
     }
 } else {
     echo "Erreur : " . mysqli_error($connexion);
